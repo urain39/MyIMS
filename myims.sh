@@ -36,8 +36,8 @@ image_resize() {
   local quality=
   local alpha=
   local type_=
-  local gray_scale="${GRAY_SCALE:-"64"}"
-  local gray_threshold="${GRAY_THRESHOLD:-"0.0625"}"
+  local gray_scale="${GRAY_SCALE:-"16"}"
+  local gray_threshold="${GRAY_THRESHOLD:-"0.16"}"
   IFS=';' read -r width height quality alpha type_ << EOF
 $( magick "${file_}" \
   -quiet \

@@ -30,16 +30,18 @@
 
 ```sh
 env \
-  TMPDIR=<临时文件存放目录> \
-  JOB_MAX=<最大进程数> \
-  SHORT_EDGE=<压缩时的短边尺寸> \
-  RESIZE_METHOD=<压缩方法> \
-  GRAY_SCALE=<识别灰阶图片时的分块边长> \
-  GRAY_THRESHOLD=<识别灰阶图片的阈值> \
+  TMPDIR=<临时文件存放目录（默认值：/tmp）> \
+  JOB_MAX=<最大进程数（最多5个，默认值：2）> \
+  SHORT_EDGE=<压缩时的短边尺寸（默认值：2160）> \
+  RESIZE_METHOD=<压缩方法（参考 ImageMagick 文档，默认值：resize）> \
+  GRAY_SCALE=<识别灰阶图片时的分块边长（越小越精确，默认值：16）> \
+  GRAY_THRESHOLD=<识别灰阶图片的阈值（越小越精确，默认值：0.16）> \
   ./myims <图片目录或zip>
 ```
 
 轻度使用只需考虑更改 JOB_MAX 和 SHORT_EDGE。
+
+当 GRAY_THRESHOLD 取值大于等于1时，将会把所有图片视为灰阶图片，这可能在某些场景下有用。
 
 ## 注意事项
 

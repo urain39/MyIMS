@@ -116,7 +116,7 @@ EOF
       ;;
   esac
 
-  local short_edge="${SHORT_EDGE:-"4320"}"
+  local short_edge="${SHORT_EDGE:-"2160"}"
 
   # Resize rules:
   #   If width < height, width=$((short_edge))px
@@ -152,6 +152,9 @@ EOF
     quality="0"  # 0 means default (almost high-quality)
   fi
 
+  # Global post effect
+  local postfx="${GLOBAL_POSTFX:-}"
+
   # Monochrome optimization
   case "${type_}" in
     Bilevel|Grayscale|GrayscaleAlpha)
@@ -170,10 +173,18 @@ EOF
       depth="4"  # 16 colors
       format="png"
       quality="85"  # Compression level 8 with adaptive PNG filtering
+
+      # Grayscale post effect
+      postfx="${GRAY_POSTFX:-"${postfx}"}"
       ;;
     *)
       ;;
   esac
+
+  if [ "${postfx}" != "" ]; then
+    convert_args="${convert_args}"" \
+${postfx}"
+  fi
 
   # Color depth (preferably placed after ordered-dither)
   convert_args="${convert_args}"' \

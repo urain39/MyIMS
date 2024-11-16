@@ -36,8 +36,8 @@ env \
   RESIZE_METHOD=<压缩方法（参考 ImageMagick 文档，默认值：resize）> \
   GRAY_SCALE=<识别灰阶图片时的分块边长（越小越精确，默认值：16）> \
   GRAY_THRESHOLD=<识别灰阶图片的阈值（越小越精确，默认值：0.16）> \
-  GLOBAL_POSTFX=<后处理特效（即自定义 ImageMagick 指令，默认为空）> \
-  GRAY_POSTFX=<灰阶后处理特效（同上，此条只针对灰阶类色彩空间起效）> \
+  GLOBAL_POSTFX=<全局后处理特效（即自定义 ImageMagick 指令，默认为空）> \
+  GRAY_POSTFX=<灰阶后处理特效（同上，但此条只针对灰阶类色彩空间起效）> \
   ./myims <图片目录或zip>
 ```
 

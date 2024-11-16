@@ -152,7 +152,7 @@ EOF
     quality="0"  # 0 means default (almost high-quality)
   fi
 
-  # Post effect
+  # Global post effect
   local postfx="${GLOBAL_POSTFX:-}"
 
   # Monochrome optimization

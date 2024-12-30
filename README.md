@@ -29,16 +29,16 @@
 ## 修改参数
 
 ```sh
-env \
-  TMPDIR=<临时文件存放目录（默认值：/tmp）> \
-  JOB_MAX=<最大进程数（最多5个，默认值：2）> \
-  SHORT_EDGE=<压缩时的短边尺寸（默认值：2160）> \
-  RESIZE_METHOD=<压缩方法（参考 ImageMagick 文档，默认值：resize）> \
-  GRAY_SCALE=<识别灰阶图片时的分块边长（越小越精确，默认值：16）> \
-  GRAY_THRESHOLD=<识别灰阶图片的阈值（越小越精确，默认值：0.16）> \
-  GLOBAL_POSTFX=<全局后处理特效（即自定义 ImageMagick 指令，默认为空）> \
-  GRAY_POSTFX=<灰阶后处理特效（同上，但此条只针对灰阶类色彩空间起效）> \
-  ./myims <图片目录或zip>
+TMPDIR=<临时文件存放目录（默认值：/tmp）> \
+JOB_MAX=<最大进程数（最多5个，默认值：2）> \
+SHORT_EDGE=<压缩时的短边尺寸（默认值：2160）> \
+RESIZE_METHOD=<压缩方法（参考 ImageMagick 文档，默认值：resize）> \
+GRAY_SCALE=<识别灰阶图片时的分块边长（越小越精确，默认值：16）> \
+GRAY_THRESHOLD=<识别灰阶图片的阈值（越小越精确，默认值：0.16）> \
+GLOBAL_POSTFX=<全局后处理特效（即自定义 ImageMagick 指令，默认为空）> \
+GRAY_POSTFX=<灰阶后处理特效（同上，但此条只针对灰阶类色彩空间起效）> \
+DITHER_PATTERN=<抖动图案（参考 ImageMagick 文档，默认值：h6x6a或o3x3）> \
+./myims <图片目录或zip>
 ```
 
 轻度使用只需考虑更改 JOB_MAX 和 SHORT_EDGE。

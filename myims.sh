@@ -181,6 +181,9 @@ EOF
       ;;
   esac
 
+  # Force override if user defined DITHER_PATTERN
+  dither_pattern="${DITHER_PATTERN:-"${dither_pattern}"}"
+
   if [ "${postfx}" != "" ]; then
     convert_args="${convert_args}"" \
 ${postfx}"
